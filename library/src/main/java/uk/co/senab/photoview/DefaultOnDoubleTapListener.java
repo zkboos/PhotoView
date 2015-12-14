@@ -71,7 +71,7 @@ public class DefaultOnDoubleTapListener implements GestureDetector.OnDoubleTapLi
             return false;
 
         try {
-            float scale = photoViewAttacher.getScale();
+            float scale =  new BigDecimal(photoViewAttacher.getScale()).setScale(2, BigDecimal.ROUND_HALF_EVEN).floatValue();
             float x = ev.getX();
             float y = ev.getY();
 
